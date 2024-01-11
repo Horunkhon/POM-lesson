@@ -1,9 +1,9 @@
 from selenium.webdriver.common.by import By
-from base_screen import BaseScreen
+from screens.base_screen import BaseScreen
 
 
 class HomeScreen(BaseScreen):
-    screen_title = (By.XPATH, "//div/h1")
+    screen_title = (By.XPATH, "//*[@id='index']/div[1]/section/div[1]/h1")
     start_for_free_btn = (By.XPATH, "//p/following-sibling::div/a[text()='Start for free']")
     email_field = (By.XPATH, "//*[@id='app']/div/div[1]/section[2]/form/div[1]/div/input")
     password_field = (By.XPATH, "//*[@id='app']/div/div[1]/section[2]/form/div[2]/div[1]/input")
@@ -42,3 +42,4 @@ class HomeScreen(BaseScreen):
 
     def enter_email(self, email):
         self.enter_data(self.email_field, email)
+        print("email")
